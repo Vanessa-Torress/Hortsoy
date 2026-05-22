@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Hortsoy</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .contact-info-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--hover-shadow);
+            border-left-color: var(--secondary-color);
+        }
+
+        .contact-info-item i {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-right: 20px;
+            width: 54px;
+            height: 54px;
+            background: rgba(56, 176, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .contact-info-item:hover i {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .contact-form:hover {
+            box-shadow: var(--hover-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e1e8e1;
+            border-radius: 8px;
+            font-family: inherit;
+            background-color: var(--light-bg);
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(56, 176, 0, 0.1);
+        }
+
+        .map-container {
+            margin-top: 50px;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            box-shadow: var(--hover-shadow);
+        }
+
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="container">
+            <div class="top-header-info">
+                <span><i class="fas fa-phone"></i> (34) 99732-3304</span>
+                <span><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</span>
+            </div>
+            <div class="top-header-links">
+                <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
+                <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn Grupo Hortsoy"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://hortsoy.com.br/wp-login.php" class="btn-portal" target="_blank" rel="noopener noreferrer">Portal do
+                    Colaborador</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img loading="lazy" src="assets/img/novo-logo.png" alt="Hortsoy Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Fale Conosco</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Início</a> / Contato
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info reveal-left">
+                    <span class="section-title">Canais de Atendimento</span>
+                    <h2>Entre em contato com nossa equipe</h2>
+                    <p style="margin-bottom: 40px;">Estamos prontos para atender suas dúvidas e solicitações. Escolha o
+                        canal de sua preferência.</p>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Av. Santos Dumont, 130 - Uberaba, MG</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(34) 99732-3304</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>atendimento@hortsoy.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Seg - Sex: 07:00 - 17:30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form reveal-right">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Seu Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: João Silva" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Seu E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Ex: joao@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" placeholder="Ex: Orçamento de Insumos"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem aqui..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="map-container reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.155458038758!2d-47.9351239!3d-19.7481239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bad03816666667%3A0x6666666666666666!2sAv.%20Santos%20Dumont%2C%20130%20-%20Uberaba%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img loading="lazy" src="assets/img/logo-branco.png" alt="Hortsoy" class="footer-logo">
+                    <p>Inovação, tecnologia e sustentabilidade para o agronegócio de ponta a ponta.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
+                        <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn Grupo Hortsoy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-location-dot"></i> Av. Santos Dumont, 130 - Uberaba, MG</li>
+                        <li><i class="fas fa-phone"></i> (34) 99732-3304</li>
+                        <li><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hortsoy. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
