@@ -1,64 +1,22 @@
 /* 
   Hortsoy Website Scripts
-  Maintained by Antigravity (Senior Design & Engineering Specialist)
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Sticky Header backdrop & heights
-    const nav = document.querySelector('.main-nav');
-    if (nav) {
-        const toggleStickyHeader = () => {
-            if (window.scrollY > 30) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        };
-        window.addEventListener('scroll', toggleStickyHeader, { passive: true });
-        toggleStickyHeader(); // Run initial state check
-    }
-
-    // Mobile Hamburger Menu Drawer Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside of the drawer
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    }
-
     // Smooth Scroll for Hash Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const hrefVal = this.getAttribute('href');
             if (hrefVal === '#') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(hrefVal);
             if (target) {
+                const nav = document.querySelector('.main-nav');
                 const headerOffset = nav ? nav.offsetHeight : 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -127,15 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         const slides = slider.querySelectorAll('.slide');
         if (slides.length <= 1) return;
-        
+
         let currentIndex = 0;
+        let slideInterval;
+
         const nextSlide = () => {
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % slides.length;
             slides[currentIndex].classList.add('active');
         };
-        
-        // Cycle slides every 4.5 seconds for elegant, relaxed visual pacing
-        setInterval(nextSlide, 4500);
+
+        slideInterval = setInterval(nextSlide, 4500);
+
+        // Optimize CPU by pausing when the tab is not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(slideInterval);
+            } else {
+                clearInterval(slideInterval); // prevent duplicates
+                slideInterval = setInterval(nextSlide, 4500);
+            }
+        });
     });
 });

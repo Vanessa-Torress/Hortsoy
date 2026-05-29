@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin" />
     <title>Sobre Nós - Hortsoy</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
@@ -15,51 +16,15 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS & Components -->
     <link rel="stylesheet" href="style.css">
+    <script src="components.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Top Header -->
-    <header class="top-header">
-        <div class="container">
-            <div class="top-header-info">
-                <span><i class="fas fa-phone"></i> (34) 99732-3304</span>
-                <span><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</span>
-            </div>
-            <div class="top-header-links">
-                <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
-                <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn Grupo Hortsoy"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://hortsoy.com.br/wp-login.php" class="btn-portal" target="_blank" rel="noopener noreferrer">Portal do
-                    Colaborador</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img loading="lazy" src="assets/img/novo-logo.png" alt="Hortsoy Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html" class="active">Sobre Nós</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Abrir Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <!-- Reusable Navbar Component -->
+    <hortsoy-header base-path="./"></hortsoy-header>
 
     <!-- Page Banner -->
     <section class="page-banner">
@@ -113,13 +78,13 @@
     <!-- Blog Section -->
     <section class="section-padding" style="background: var(--light-bg);">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 50px;">
+            <div class="section-header-centered">
                 <h2>Radar HortSoy: Atualizações do Campo</h2>
                 <p style="max-width: 600px; margin: 15px auto 0; color: var(--light-text);">Acompanhe nossos eventos, parcerias tecnológicas e os principais marcos do agronegócio.</p>
             </div>
             <div class="blog-grid">
                 <!-- Blog Card 1 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-plantando-ideias.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-plantando-ideias.png" alt="Plantando Ideias Hortsoy">
                     </div>
@@ -127,14 +92,14 @@
                         <span class="blog-date">16 Jun 2025</span>
                         <h3 class="blog-title">Plantando Ideias – Um Encontro Inspirador no Grupo Hortsoy</h3>
                         <p class="blog-excerpt">Encontro focado no engajamento, bem-estar e no compartilhamento de conhecimento essencial para impulsionar a inovação no dia a dia da equipe Hortsoy.</p>
-                        <a href="blog/blog-plantando-ideias.html" class="blog-btn">
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Blog Card 2 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-expo2025.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-expo2025.png" alt="Hortsoy Conectando o Campo ao Futuro">
                     </div>
@@ -142,29 +107,29 @@
                         <span class="blog-date">23 Mai 2025</span>
                         <h3 class="blog-title">Hortsoy — Conectando o Campo ao Futuro.</h3>
                         <p class="blog-excerpt">A Hortsoy marcou presença com soluções tecnológicas inovadoras de bioestimulantes, nutrição de plantas e controle biológico para otimizar os resultados das safras.</p>
-                        <a href="blog/blog-expo2025.html" class="blog-btn">
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Blog Card 3 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-novo-centro.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-novo-centro.jpg" alt="Novo Centro Administrativo Hortsoy">
                     </div>
                     <div class="blog-content">
                         <span class="blog-date">14 Fev 2025</span>
                         <h3 class="blog-title">Inauguração do Novo Centro Administrativo da HortSoy</h3>
-                        <p class="blog-excerpt">Celebramos a inauguração oficial de nossa nova sede administrativa em Uberaba-MG. Um espaço moderno planejado para promover integração, colaboração e suporte de alta eficiência.</p>
-                        <a href="blog/blog-novo-centro.html" class="blog-btn">
+                        <p class="blog-excerpt">Celebramos a inaugururação oficial de nossa nova sede administrativa em Uberaba-MG. Um espaço moderno planejado para promover integração, colaboração e suporte de alta eficiência.</p>
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Blog Card 4 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-barter-cafe.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-barter-cafe.jpg" alt="Barter Café Bayer e Hortsoy">
                     </div>
@@ -172,14 +137,14 @@
                         <span class="blog-date">14 Fev 2025</span>
                         <h3 class="blog-title">HortSoy Marca Presença no Evento Barter Café 25/26 da Bayer</h3>
                         <p class="blog-excerpt">Nossos consultores estiveram presentes no Barter Café da Bayer em Ribeirão Preto-SP, fortalecendo a parceria comercial e as inovações no manejo e mercado cafeeiro.</p>
-                        <a href="blog/blog-barter-cafe.html" class="blog-btn">
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Blog Card 5 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-manejo-soja.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-manejo-soja.jpg" alt="Manejo de Soja Hortsoy e Vittia">
                     </div>
@@ -187,14 +152,14 @@
                         <span class="blog-date">14 Fev 2025</span>
                         <h3 class="blog-title">HortSoy e Vittia Realizam Evento Técnico sobre Manejo de Soja com Nutrição</h3>
                         <p class="blog-excerpt">Um encontro de campo focado na transferência de novas tecnologias de nutrição avançada e manejo de solo para alavancar a produtividade da cultura da soja.</p>
-                        <a href="blog/blog-manejo-soja.html" class="blog-btn">
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Blog Card 6 -->
-                <div class="blog-card reveal">
+                <a href="blog/blog-produtividade-bayer.html" class="blog-card reveal">
                     <div class="blog-image-wrapper">
                         <img loading="lazy" src="assets/img/blog-produtividade-bayer.jpg" alt="Produtividade Agrícola Hortsoy e Bayer">
                     </div>
@@ -202,54 +167,52 @@
                         <span class="blog-date">11 Fev 2025</span>
                         <h3 class="blog-title">Descubra como a HortSoy e a Bayer Impulsionam sua Produtividade Agrícola</h3>
                         <p class="blog-excerpt">Uma parceria sólida que une biotecnologia de ponta, defensivos e suporte especializado para reduzir o estresse de gestão e otimizar cada safra no campo.</p>
-                        <a href="blog/blog-produtividade-bayer.html" class="blog-btn">
+                        <span class="blog-btn">
                             Ler Post Completo <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img loading="lazy" src="assets/img/logo-branco.png" alt="Hortsoy" class="footer-logo">
-                    <p>Inovação, tecnologia e sustentabilidade para o agronegócio de ponta a ponta.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
-                        <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
-                            aria-label="LinkedIn Grupo Hortsoy"><i
-                                class="fab fa-linkedin-in"></i></a>
+    <!-- Reusable Footer Component -->
+    <hortsoy-footer base-path="./"></hortsoy-footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <div class="whatsapp-float-container">
+        <div class="whatsapp-card">
+            <div class="whatsapp-card-header">
+                <div class="whatsapp-avatar">
+                    <div class="whatsapp-avatar-img">
+                        <i class="fas fa-headset"></i>
                     </div>
+                    <span class="whatsapp-avatar-status"></span>
                 </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="servicos.html">Serviços</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-location-dot"></i> Av. Santos Dumont, 130 - Uberaba, MG</li>
-                        <li><i class="fas fa-phone"></i> (34) 99732-3304</li>
-                        <li><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</li>
-                    </ul>
+                <div class="whatsapp-card-info">
+                    <h4>Suporte Hortsoy</h4>
+                    <span>Online</span>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Hortsoy. Todos os direitos reservados.</p>
+            <div class="whatsapp-card-body">
+                <p>Olá! Como podemos ajudar sua lavoura hoje? Fale com nosso especialista.</p>
+                <a href="https://wa.me/5534997323304?text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+as+solu%C3%A7%C3%B5es+da+Hortsoy." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="whatsapp-card-btn">
+                    <i class="fab fa-whatsapp"></i> Iniciar Conversa
+                </a>
             </div>
         </div>
-    </footer>
+        <a href="https://wa.me/5534997323304?text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+as+solu%C3%A7%C3%B5es+da+Hortsoy." 
+           class="whatsapp-badge-button" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Fale Conosco no WhatsApp">
+            <span class="whatsapp-status-dot"></span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -15,51 +15,15 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS & Components -->
     <link rel="stylesheet" href="../style.css">
+    <script src="../components.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Top Header -->
-    <header class="top-header">
-        <div class="container">
-            <div class="top-header-info">
-                <span><i class="fas fa-phone"></i> (34) 99732-3304</span>
-                <span><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</span>
-            </div>
-            <div class="top-header-links">
-                <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
-                <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn Grupo Hortsoy"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://hortsoy.com.br/wp-login.php" class="btn-portal" target="_blank" rel="noopener noreferrer">Portal do
-                    Colaborador</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-        <div class="container">
-            <a href="../index.html" class="logo">
-                <img loading="lazy" src="../assets/img/novo-logo.png" alt="Hortsoy Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="../sobre.html" class="active">Sobre Nós</a></li>
-                <li><a href="../servicos.html">Serviços</a></li>
-                <li><a href="../contato.html">Contato</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Abrir Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <!-- Reusable Navbar Component -->
+    <hortsoy-header base-path="../"></hortsoy-header>
 
     <!-- Page Banner -->
     <section class="page-banner">
@@ -156,44 +120,8 @@
     </section>
     <!-- Footer -->
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img loading="lazy" src="../assets/img/logo-branco.png" alt="Hortsoy" class="footer-logo">
-                    <p>Inovação, tecnologia e <strong>sustentabilidade</strong> para o agronegócio de ponta a ponta.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/Hortsoy/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Facebook Hortsoy"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/hortsoy/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram Hortsoy"><i class="fab fa-instagram"></i></a>
-                        <a href="https://br.linkedin.com/company/grupo-hortsoy" target="_blank" rel="noopener noreferrer"
-                            aria-label="LinkedIn Grupo Hortsoy"><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index.html">Início</a></li>
-                        <li><a href="../sobre.html">Sobre Nós</a></li>
-                        <li><a href="../servicos.html">Serviços</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-location-dot"></i> Av. Santos Dumont, 130 - Uberaba, MG</li>
-                        <li><i class="fas fa-phone"></i> (34) 99732-3304</li>
-                        <li><i class="fas fa-envelope"></i> atendimento@hortsoy.com.br</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 <strong>Hortsoy</strong>. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Reusable Footer Component -->
+    <hortsoy-footer base-path="../"></hortsoy-footer>
 
     <script src="script.js"></script>
 </body>
