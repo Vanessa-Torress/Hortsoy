@@ -160,6 +160,7 @@ class HortsoyFooter extends HTMLElement {
                     </div>
                     <div class="footer-bottom">
                         <p>&copy; 2026 Hortsoy. Todos os direitos reservados.</p>
+                        <p class="footer-signature">Desenvolvido por Vanessa Torres</p>
                     </div>
                 </div>
             </footer>

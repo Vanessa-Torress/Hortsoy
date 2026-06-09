@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inauguração do Novo Centro Administrativo da HortSoy - Hortsoy</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta name="theme-color" content="#004b23">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,11 +113,7 @@
                         </ul>
                     </div>
                     
-                    <div class="sidebar-widget cta-widget">
-                        <h3>Vamos Conversar?</h3>
-                        <p>Descubra como a <strong>Hortsoy</strong> pode transformar a produtividade da sua lavoura.</p>
-                        <a href="../contato.html" class="btn">Fale Conosco</a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -126,7 +123,42 @@
     <!-- Reusable Footer Component -->
     <hortsoy-footer base-path="../"></hortsoy-footer>
 
-    <script src="script.js"></script>
+    <!-- Floating WhatsApp Widget -->
+    <div class="whatsapp-float-container">
+        <div class="whatsapp-card">
+            <div class="whatsapp-card-header">
+                <div class="whatsapp-avatar">
+                    <div class="whatsapp-avatar-img">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <span class="whatsapp-avatar-status"></span>
+                </div>
+                <div class="whatsapp-card-info">
+                    <h4>Suporte Hortsoy</h4>
+                    <span>Online</span>
+                </div>
+            </div>
+            <div class="whatsapp-card-body">
+                <p>Olá! Como podemos ajudar sua lavoura hoje? Fale com nosso especialista.</p>
+                <a href="https://wa.me/5534997323304?text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+as+solu%C3%A7%C3%B5es+da+Hortsoy." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="whatsapp-card-btn">
+                    <i class="fab fa-whatsapp"></i> Iniciar Conversa
+                </a>
+            </div>
+        </div>
+        <a href="https://wa.me/5534997323304?text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+as+solu%C3%A7%C3%B5es+da+Hortsoy." 
+           class="whatsapp-badge-button" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Fale Conosco no WhatsApp">
+            <span class="whatsapp-status-dot"></span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="../script.js"></script>
 </body>
 
 </html>

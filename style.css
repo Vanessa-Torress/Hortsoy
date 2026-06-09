@@ -27,7 +27,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; (Removido para usar Lenis JS) */
     overflow-y: scroll;
 }
 
@@ -275,11 +275,13 @@ hortsoy-footer {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--secondary-color);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -289,13 +291,13 @@ hortsoy-footer {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 26px;
-    height: 18px;
+    width: 44px;
+    height: 44px;
+    padding: 13px 9px;
     background: transparent;
     border: none;
     cursor: pointer;
     z-index: 1100;
-    padding: 0;
     outline: none;
 }
 
@@ -504,7 +506,7 @@ h2 {
 /* Services */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 30px;
     margin-top: 50px;
 }
@@ -766,8 +768,8 @@ footer {
 }
 
 .footer-social a {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
@@ -775,7 +777,7 @@ footer {
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 16px;
+    font-size: 18px;
     transition: var(--transition);
 }
 
@@ -790,8 +792,15 @@ footer {
 .footer-bottom {
     border-top: 1px solid #333;
     padding-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 14px;
+}
+
+.footer-signature {
+    font-size: 12px;
+    opacity: 0.8;
 }
 
 /* Responsive */
@@ -970,6 +979,12 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
 
     .footer-col h4::after {

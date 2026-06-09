@@ -3,27 +3,44 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth Scroll for Hash Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const hrefVal = this.getAttribute('href');
-            if (hrefVal === '#') return;
-
-            e.preventDefault();
-            const target = document.querySelector(hrefVal);
-            if (target) {
-                const nav = document.querySelector('.main-nav');
-                const headerOffset = nav ? nav.offsetHeight : 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    // Premium Smooth Scroll com Lenis JS
+    const lenisScript = document.createElement('script');
+    lenisScript.src = 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
+    lenisScript.onload = () => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+            smoothTouch: false, // Dispositivos touch já têm rolagem suave nativamente
         });
-    });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Atualizando o Smooth Scroll para Links de Âncora para usar Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const hrefVal = this.getAttribute('href');
+                if (hrefVal === '#') return;
+
+                const target = document.querySelector(hrefVal);
+                if (target) {
+                    e.preventDefault();
+                    const nav = document.querySelector('.main-nav');
+                    const headerOffset = nav ? nav.offsetHeight : 80;
+                    
+                    lenis.scrollTo(target, {
+                        offset: -headerOffset,
+                        duration: 1.2
+                    });
+                }
+            });
+        });
+    };
+    document.head.appendChild(lenisScript);
 
     // Highly Performant CSS Bounded Scroll-Driven Animations using IntersectionObserver
     const revealCallback = (entries, observer) => {
@@ -89,22 +106,22 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
         let slideInterval;
 
+        let isVisible = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+            });
+        }, { threshold: 0.1 });
+        observer.observe(slider);
+
         const nextSlide = () => {
+            if (!isVisible || document.hidden) return;
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % slides.length;
             slides[currentIndex].classList.add('active');
         };
 
         slideInterval = setInterval(nextSlide, 4500);
-
-        // Optimize CPU by pausing when the tab is not visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                clearInterval(slideInterval);
-            } else {
-                clearInterval(slideInterval); // prevent duplicates
-                slideInterval = setInterval(nextSlide, 4500);
-            }
-        });
     });
 });
