@@ -331,7 +331,7 @@ hortsoy-footer {
 /* Hero Section */
 .hero {
     height: calc(100vh - var(--header-height));
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/hero.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/img/hero.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -694,7 +694,7 @@ h2 {
 
 /* Page Banner */
 .page-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/img/hero.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/img/hero.png');
     background-size: cover;
     background-position: center;
     padding: 100px 0;
