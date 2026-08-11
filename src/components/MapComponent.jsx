@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap, LayersControl } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip, useMap, useMapEvents, LayersControl } from 'react-leaflet';
 import L from 'leaflet';
 import { Search, MapPin, Phone, Navigation } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
@@ -15,7 +15,7 @@ function MapUpdater({ activeBranch }) {
         duration: 1.5,
       });
     } else {
-      map.flyTo([-19.7467, -47.9391], 7, {
+      map.flyTo([-19.6, -47.15], 8, {
         duration: 1.5,
       });
     }
@@ -23,9 +23,20 @@ function MapUpdater({ activeBranch }) {
   return null;
 }
 
+// Componente para escutar mudanças de zoom
+function ZoomListener({ onZoomChange }) {
+  useMapEvents({
+    zoomend: (e) => {
+      onZoomChange(e.target.getZoom());
+    },
+  });
+  return null;
+}
+
 export default function MapComponent() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeBranchId, setActiveBranchId] = useState(null);
+  const [currentZoom, setCurrentZoom] = useState(8);
 
   // Filtragem das filiais
   const filteredBranches = useMemo(() => {
@@ -122,16 +133,21 @@ export default function MapComponent() {
       {/* Visualizador do Mapa */}
       <div className="map-view">
         <MapContainer
-          center={[-19.7467, -47.9391]}
-          zoom={7}
+          center={[-19.6, -47.15]}
+          zoom={8}
+          minZoom={4}
+          maxBounds={[[-90, -180], [90, 180]]}
+          maxBoundsViscosity={1.0}
           scrollWheelZoom={true}
           style={{ width: '100%', height: '100%' }}
         >
+          <ZoomListener onZoomChange={setCurrentZoom} />
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="Mapa Padrão">
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                noWrap={true}
               />
             </LayersControl.BaseLayer>
 
@@ -139,11 +155,14 @@ export default function MapComponent() {
               <TileLayer
                 attribution='Tiles &copy; Esri'
                 url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                noWrap={true}
               />
             </LayersControl.BaseLayer>
           </LayersControl>
 
-          {filiais.map(branch => (
+          {filiais.map(branch => {
+            const showTooltip = !activeBranchId && currentZoom <= 8;
+            return (
             <Marker
               key={branch.id}
               position={[branch.lat, branch.lng]}
@@ -152,6 +171,16 @@ export default function MapComponent() {
                 click: () => setActiveBranchId(branch.id),
               }}
             >
+              {showTooltip && (
+                <Tooltip 
+                  permanent 
+                  direction="bottom" 
+                  offset={[0, 15]} 
+                  className="marker-tooltip"
+                >
+                  {branch.nome}
+                </Tooltip>
+              )}
               <Popup closeButton={false}>
                 <div className="popup-header">
                   <h4>{branch.nome}</h4>
@@ -178,7 +207,8 @@ export default function MapComponent() {
                 </div>
               </Popup>
             </Marker>
-          ))}
+            );
+          })}
 
           <MapUpdater activeBranch={activeBranch} />
         </MapContainer>

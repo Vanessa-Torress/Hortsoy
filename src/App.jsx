@@ -23,7 +23,19 @@ function ScrollToTop() {
     const { pathname } = useLocation();
 
     useEffect(() => {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        
         window.scrollTo(0, 0);
+        
+        // Wait for React to render the new route, then tell Lenis to scroll
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            if (window.lenis) {
+                window.lenis.scrollTo(0, { immediate: true });
+            }
+        }, 50);
     }, [pathname]);
 
     return null;
@@ -33,8 +45,8 @@ function ScrollToTop() {
 function AnimationManager() {
     const { pathname } = useLocation();
 
+    // Initialize Lenis ONCE
     useEffect(() => {
-        // Setup Lenis Smooth Scroll
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -43,12 +55,22 @@ function AnimationManager() {
         });
         window.lenis = lenis;
 
+        let reqId;
         function raf(time) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            reqId = requestAnimationFrame(raf);
         }
-        requestAnimationFrame(raf);
+        reqId = requestAnimationFrame(raf);
 
+        return () => {
+            cancelAnimationFrame(reqId);
+            lenis.destroy();
+            window.lenis = null;
+        };
+    }, []);
+
+    // Intersection Observers (re-run on route change)
+    useEffect(() => {
         // Intersection Observer for Reveal Animations
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
@@ -131,7 +153,11 @@ function AnimationManager() {
         }
 
         return () => {
-            lenis.destroy();
+            // Clean up observers on unmount or route change
+            revealObserver.disconnect();
+            if (typeof counterObserver !== 'undefined') {
+                counterObserver.disconnect();
+            }
         };
     }, [pathname]); // Re-run on route change to rebind elements
 

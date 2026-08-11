@@ -27,11 +27,7 @@
 }
 
 html {
-    /* scroll-behavior: smooth; (Removido para usar Lenis JS) */
     overflow-y: scroll;
-    zoom: 80%;
-    -moz-transform: scale(0.8);
-    -moz-transform-origin: 0 0;
 }
 
 body {
@@ -41,6 +37,11 @@ body {
     overflow-x: clip;
     background-color: var(--white);
     animation: fadeInPage 0.4s ease-out forwards;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 @keyframes fadeInPage {
@@ -1762,7 +1763,7 @@ footer {
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-info {
         padding: 30px 20px;
     }
