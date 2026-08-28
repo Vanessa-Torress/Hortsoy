@@ -1,16 +1,56 @@
-# React + Vite
+# Hortsoy
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Portal institucional e de conteúdo do grupo Hortsoy, construído com Next.js, TypeScript e App Router.
 
-Currently, two official plugins are available:
+## Visão geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto foi estruturado para entregar:
 
-## React Compiler
+- alto desempenho e SEO em páginas estáticas e dinâmicas
+- arquitetura moderna em App Router do Next.js
+- componente de scroll suave com Lenis
+- layout institucional com foco em preservação visual
+- API nativa de contato em Route Handlers
+- suporte para conteúdo de blog e páginas institucionais
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Leaflet + react-leaflet
+- Lenis
+- lucide-react
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Estrutura principal
+
+- app/ — rotas, layouts e páginas do App Router
+- src/components/ — componentes reutilizáveis do front-end
+- src/config/ — configuração central do projeto
+- src/data/ — dados estruturados como filiais e conteúdos
+- public/assets/ — arquivos estáticos e imagens
+
+## Scripts
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run start
+npm run validate:types
+npm run validate:lint
+```
+
+## Convenções adotadas
+
+- App Router como padrão de routing
+- TypeScript com tipagem forte para componentes e dados
+- CSS global centralizado em app/globals.css
+- configuração de site centralizada em src/config/site.ts
+- metadata e SEO definidos nas páginas e layout raiz
+- padrões de acessibilidade e estrutura reutilizável por componente
+
+## Ambiente
+
+Copie o arquivo .env.example para .env.local e ajuste os valores conforme necessário.

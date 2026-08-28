@@ -1,29 +1,45 @@
 {
-  "name": "web-app",
+  "name": "hortsoy",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "validate:types": "tsc --noEmit",
+    "validate:lint": "oxlint",
+    "validate:format": "prettier --check .",
+    "validate:deadcode": "knip",
+    "validate:security": "npm audit",
+    "validate:all": "npm run validate:types && npm run validate:lint && npm run validate:format && npm run validate:deadcode && npm run validate:security",
+    "fix:format": "prettier --write .",
+    "fix:all": "npm run fix:format && oxlint --fix",
+    "security:fix": "npm audit fix",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.42",
+    "@tailwindcss/postcss": "^4.3.3",
     "leaflet": "^1.9.4",
-    "lenis": "^1.3.25",
-    "lucide-react": "^1.28.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "lenis": "^1.3.26",
+    "lucide-react": "^1.34.0",
+    "next": "^16.3.3",
+    "postcss": "^8.5.26",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "react-leaflet": "^5.0.0",
-    "react-router-dom": "^7.18.1"
+    "tailwindcss": "^4.3.3",
+    "validator": "^13.15.35"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.18",
+    "@types/node": "^26.3.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.3",
+    "@types/validator": "^13.15.2",
+    "husky": "^9.1.7",
+    "knip": "^6.32.3",
     "oxlint": "^1.71.0",
-    "vite": "^8.1.1"
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   }
 }

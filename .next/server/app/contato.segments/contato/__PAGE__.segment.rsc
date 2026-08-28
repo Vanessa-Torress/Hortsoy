@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[37583,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js","/_next/static/chunks/3tnm66xkbr7ch.js"],"default"]
+3:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+8:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"ViewportBoundary"]
+9:I[97367,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"MetadataBoundary"]
+a:I[27201,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"IconMark"]
+c:I[39756,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"default"]
+d:I[37457,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/11wcusa4b8s8w.js"],"default"]
+7:X
+f:X
+f:C
+0:{"buildId":"qok6F073Z4GpMd_ziEvha","data":[{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/_next/static/chunks/3tnm66xkbr7ch.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"HORTSOY | Agronegócio | HORTSOY | Agronegócio"}],["$","meta","1",{"name":"description","content":"Entre em contato com a equipe da Hortsoy. Tire dúvidas técnicas, solicite cotação de insumos e saiba mais sobre nossos serviços em Uberaba e região."}],["$","meta","2",{"name":"author","content":"Hortsoy"}],["$","meta","3",{"name":"keywords","content":"Hortsoy,agronegócio,sementes,defensivos agrícolas,fertilizantes,barter,café,soja,Uberaba"}],["$","meta","4",{"name":"creator","content":"Hortsoy"}],["$","meta","5",{"name":"publisher","content":"Hortsoy"}],["$","meta","6",{"name":"robots","content":"index, follow"}],["$","meta","7",{"property":"og:title","content":"HORTSOY | Agronegócio"}],["$","meta","8",{"property":"og:description","content":"Conectamos o campo às tecnologias mais avançadas do mundo. Sementes, fertilizantes, defensivos, operações de barter e suporte agronômico especializado."}],["$","meta","9",{"property":"og:url","content":"https://hortsoy.com.br"}],["$","meta","10",{"property":"og:site_name","content":"Hortsoy"}],["$","meta","11",{"property":"og:locale","content":"pt-BR"}],["$","meta","12",{"property":"og:image","content":"https://hortsoy.com.br/assets/img/about.png"}],["$","meta","13",{"property":"og:image:width","content":"1200"}],["$","meta","14",{"property":"og:image:height","content":"630"}],["$","meta","15",{"property":"og:image:alt","content":"Hortsoy Agronegócio"}],["$","meta","16",{"property":"og:type","content":"website"}],["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","18",{"name":"twitter:title","content":"HORTSOY | Agronegócio"}],["$","meta","19",{"name":"twitter:description","content":"Conectamos o campo às tecnologias mais avançadas do mundo. Sementes, fertilizantes, defensivos, operações de barter e suporte agronômico especializado."}],["$","meta","20",{"name":"twitter:image","content":"https://hortsoy.com.br/assets/img/about.png"}],["$","link","21",{"rel":"icon","href":"/assets/img/favicon.png"}],["$","link","22",{"rel":"apple-touch-icon","href":"/assets/img/favicon.png"}],["$","$La","23",{}]]}]}]}],null]}],"isPartial":"$@b","staleTime":"$7","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}]}]]}],"isPartial":"$@e","staleTime":"$7","varyParams":"$f"}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
+5:null
+11:true
+7:300
+7:C
+10:0
+b:"$undefined"
+e:"$undefined"
+6:"$undefined"

@@ -274,7 +274,15 @@
   pointer-events: none;
   white-space: nowrap;
   /* text-shadow to ensure legibility over the map without a solid background */
-  text-shadow: 2px 0 3px #fff, -2px 0 3px #fff, 0 2px 3px #fff, 0 -2px 3px #fff, 1px 1px 3px #fff, -1px -1px 3px #fff, 1px -1px 3px #fff, -1px 1px 3px #fff;
+  text-shadow:
+    2px 0 3px #fff,
+    -2px 0 3px #fff,
+    0 2px 3px #fff,
+    0 -2px 3px #fff,
+    1px 1px 3px #fff,
+    -1px -1px 3px #fff,
+    1px -1px 3px #fff,
+    -1px 1px 3px #fff;
 }
 
 .leaflet-tooltip.marker-tooltip::before,

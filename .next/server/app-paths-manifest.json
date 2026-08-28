@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contato/route": "app/api/contato/route.js",
+  "/blog/barter-cafe/page": "app/blog/barter-cafe/page.js",
+  "/blog/expo2025/page": "app/blog/expo2025/page.js",
+  "/blog/manejo-soja/page": "app/blog/manejo-soja/page.js",
+  "/blog/novo-centro/page": "app/blog/novo-centro/page.js",
+  "/blog/plantando-ideias/page": "app/blog/plantando-ideias/page.js",
+  "/blog/produtividade-bayer/page": "app/blog/produtividade-bayer/page.js",
+  "/canal-de-denuncia/page": "app/canal-de-denuncia/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/page": "app/page.js",
+  "/politica-de-privacidade/page": "app/politica-de-privacidade/page.js",
+  "/politica-de-seguranca/page": "app/politica-de-seguranca/page.js",
+  "/servicos/page": "app/servicos/page.js",
+  "/sobre/page": "app/sobre/page.js",
+  "/termos-de-uso/page": "app/termos-de-uso/page.js"
+}

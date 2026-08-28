@@ -1,0 +1,10 @@
+{
+  "/blog/expo2025/page": "app/blog/expo2025/page.js",
+  "/blog/manejo-soja/page": "app/blog/manejo-soja/page.js",
+  "/blog/novo-centro/page": "app/blog/novo-centro/page.js",
+  "/blog/plantando-ideias/page": "app/blog/plantando-ideias/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/page": "app/page.js",
+  "/servicos/page": "app/servicos/page.js",
+  "/sobre/page": "app/sobre/page.js"
+}

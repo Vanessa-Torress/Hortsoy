@@ -1,0 +1,147 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/contato",
+      "regex": "^/api/contato(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contato(?:/)?$"
+    },
+    {
+      "page": "/blog/barter-cafe",
+      "regex": "^/blog/barter\\-cafe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/barter\\-cafe(?:/)?$"
+    },
+    {
+      "page": "/blog/expo2025",
+      "regex": "^/blog/expo2025(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/expo2025(?:/)?$"
+    },
+    {
+      "page": "/blog/manejo-soja",
+      "regex": "^/blog/manejo\\-soja(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/manejo\\-soja(?:/)?$"
+    },
+    {
+      "page": "/blog/novo-centro",
+      "regex": "^/blog/novo\\-centro(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/novo\\-centro(?:/)?$"
+    },
+    {
+      "page": "/blog/plantando-ideias",
+      "regex": "^/blog/plantando\\-ideias(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/plantando\\-ideias(?:/)?$"
+    },
+    {
+      "page": "/blog/produtividade-bayer",
+      "regex": "^/blog/produtividade\\-bayer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/produtividade\\-bayer(?:/)?$"
+    },
+    {
+      "page": "/canal-de-denuncia",
+      "regex": "^/canal\\-de\\-denuncia(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/canal\\-de\\-denuncia(?:/)?$"
+    },
+    {
+      "page": "/contato",
+      "regex": "^/contato(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contato(?:/)?$"
+    },
+    {
+      "page": "/politica-de-privacidade",
+      "regex": "^/politica\\-de\\-privacidade(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/politica\\-de\\-privacidade(?:/)?$"
+    },
+    {
+      "page": "/politica-de-seguranca",
+      "regex": "^/politica\\-de\\-seguranca(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/politica\\-de\\-seguranca(?:/)?$"
+    },
+    {
+      "page": "/servicos",
+      "regex": "^/servicos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/servicos(?:/)?$"
+    },
+    {
+      "page": "/sobre",
+      "regex": "^/sobre(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sobre(?:/)?$"
+    },
+    {
+      "page": "/termos-de-uso",
+      "regex": "^/termos\\-de\\-uso(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/termos\\-de\\-uso(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
