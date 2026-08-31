@@ -1,0 +1,10 @@
+.next
+dist
+build
+out
+node_modules
+.git
+package-lock.json
+*.tsbuildinfo
+.husky
+next-env.d.ts

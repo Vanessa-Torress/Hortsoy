@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Page Transition — Cinematic Hardware-Accelerated Crossfade & Depth
+   ========================================================================== */
+
+:root {
+  --transition-timing: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-duration-in: 850ms;
+  --transition-duration-out: 350ms;
+}
+
+.page-transition-root {
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.page-transition-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  transform-origin: top center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* Estado de Entrada Inicial (ao montar ou mudar rota) */
+.page-transition-wrapper.is-entering {
+  opacity: 0;
+  transform: translateY(14px) scale(0.988) translateZ(0);
+  will-change: opacity, transform;
+}
+
+/* Estado Ativo (repouso visual fluido) */
+.page-transition-wrapper.is-active {
+  opacity: 1;
+  transform: translateY(0) scale(1) translateZ(0);
+  transition:
+    opacity var(--transition-duration-in) var(--transition-timing),
+    transform var(--transition-duration-in) var(--transition-timing);
+  will-change: auto;
+}
+
+/* Estado de Saída (fade-out gradual ao clicar em navegação interna) */
+.page-transition-wrapper.is-exiting {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.992) translateZ(0);
+  transition:
+    opacity var(--transition-duration-out) var(--transition-timing),
+    transform var(--transition-duration-out) var(--transition-timing);
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+/* Acessibilidade: Respeito a prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-wrapper,
+  .page-transition-wrapper.is-entering,
+  .page-transition-wrapper.is-active,
+  .page-transition-wrapper.is-exiting {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+  }
+}
